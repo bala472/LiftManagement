@@ -59,7 +59,7 @@ public class Lift {
                 }
                 int destination = in.nextInt();
                 boolean flag = true;
-                if (currentFloor >= 0 && destination <= 5) {
+                if (currentFloor >= 0 && currentFloor <=5 && destination <= 5 && destination>=0) {
                     int lift1 = Math.abs(lift.get("L1") - currentFloor);
                     int lift2 = Math.abs(lift.get("L2") - currentFloor);
                     int allLift = Math.abs(lift.get("L5") - currentFloor);
@@ -80,8 +80,8 @@ public class Lift {
                         lift.put("L2", destination);
                         flag = false;
                     }
-                } else if (currentFloor >= 6 || currentFloor == 0) {
-                    if (destination >= 6 || destination == 0) {
+                } else if ((currentFloor >= 6 && currentFloor<=10) || currentFloor == 0) {
+                    if ((destination >= 6 && destination <=10) || destination == 0) {
                         if (destination <= 10) {
                             int lift3 = Math.abs(lift.get("L3") - currentFloor);
                             int lift4 = Math.abs(lift.get("L4") - currentFloor);
@@ -107,10 +107,10 @@ public class Lift {
                     }
                 }
                 if (flag) {
-                    if ((currentFloor >= 0 && currentFloor <= 5 && destination >= 6 && destination <= 10) || (currentFloor >= 6 && currentFloor <= 10 && destination <= 5 && destination >= 0)) {
-                        lift.put("L5", destination);
-                    }
+                  /*  if ((currentFloor >= 0 && currentFloor <= 5 && destination >= 6 && destination <= 10) || (currentFloor >= 6 && currentFloor <= 10 && destination <= 5 && destination >= 0)) {
 
+                    }*/
+                    lift.put("L5", destination);
                 }
                 printStatus();
             }catch (Exception e){
