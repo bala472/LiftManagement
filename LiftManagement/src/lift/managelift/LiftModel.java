@@ -5,9 +5,8 @@ import lift.datalayer.DataLayer;
 public class LiftModel {
 
     private LiftView liftView;
-
     public LiftModel(LiftView liftView){
-        this.liftView = new LiftView();
+        this.liftView = liftView;
     }
     public void setup(){
         DataLayer.getInstance().getLift().put("L1",0);
